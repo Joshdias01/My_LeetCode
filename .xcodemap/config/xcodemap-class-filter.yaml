@@ -1,6 +1,7 @@
 autoDetectedPackages:
 - Arrays
 - Math
+- Strings
 enableAutoDetect: true
 entryDisplayConfig:
   excludedPathPatterns: []
