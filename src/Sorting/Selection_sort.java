@@ -24,7 +24,7 @@ public class Selection_sort {
         }
     }
 
-    private static void swap(int[] arr, int i, int min) {
+    static void swap(int[] arr, int i, int min) {
         int temp=arr[i];
         arr[i]=arr[min];
         arr[min]=temp;
