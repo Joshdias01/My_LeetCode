@@ -10,10 +10,6 @@ class Solution {
                 ans.get(ans.size()-1)[1]=max;
             }
         }
-        int[][] out = new int[ans.size()][2];
-        for(int i=0;i<ans.size();i++){
-            out[i]=ans.get(i);
-        }
-        return out;
+        return ans.toArray(new int[ans.size()][]);
     }
 }
