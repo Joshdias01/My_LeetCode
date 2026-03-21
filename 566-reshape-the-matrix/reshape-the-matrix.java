@@ -3,16 +3,15 @@ class Solution {
         int[][] ans = new int[r][c];
         if(mat.length*mat[0].length!=(r*c))
             return mat;
-        List<Integer> list = new ArrayList<>();
+        int k=0,l=0;
         for(int i=0;i<mat.length;i++){
             for(int j=0;j<mat[0].length;j++){
-                list.add(mat[i][j]);
-            }
-        }
-        int idx=0;
-        for(int i=0;i<r;i++){
-            for(int j=0;j<c;j++){
-                ans[i][j]=list.get(idx++);
+                ans[k][l] = mat[i][j];
+                l++;
+                if(l == c) {
+                    k++;
+                    l = 0;
+                }
             }
         }
         return ans;
