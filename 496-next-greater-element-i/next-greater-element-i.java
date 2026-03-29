@@ -6,19 +6,17 @@ class Solution {
         
         for(int i=0;i<nums1.length;i++){
             int j=map.get(nums1[i]);
-            List<Integer> set = new LinkedList<>();
-            for(int k=j+1;k<nums2.length;k++){
-                set.add(nums2[k]);
-            }
             int get=nums1[i];
-            for(int k:set){
-                if(k>nums1[i]){
-                    get=k;
+            nums1[i]=-1;
+            for(int k=j+1;k<nums2.length;k++){
+                if(nums2[k]>get){
+                    nums1[i]=nums2[k];
                     break;
                 }
+                else 
+                    nums1[i]=-1;
             }
-            nums1[i]=(get==nums1[i])? -1:get;
-        }
+            }
         return nums1;
     }
 }
