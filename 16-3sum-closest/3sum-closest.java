@@ -13,9 +13,9 @@ class Solution {
                 if(Math.abs(sum-target)<Math.abs(diff-target)){
                     diff=sum;
                 }
-                if (sum < target) {
+                if (sum<target) {
                     j++; 
-                } else {
+                }else{
                     k--;
                 }
             }
