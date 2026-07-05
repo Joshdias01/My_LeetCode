@@ -20,7 +20,7 @@ class Solution {
         double hr=0;
         for(int i=0;i<nums.length;i++){
             if(i!=nums.length-1){
-                hr+=Math.ceil((double)nums[i]/mid);
+                hr+=(nums[i]+mid-1)/mid;
             }else{
                 hr+=((double)nums[i]/(double)mid);
             }
