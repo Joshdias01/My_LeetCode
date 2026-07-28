@@ -11,22 +11,22 @@
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode res= new ListNode();
-        int carry=0,sum=0;
-        ListNode temp=res;
-        while(l1!=null || l2!=null || carry!=0){
-            sum=carry;
-            if(l1!=null){
-                sum+=l1.val;
-                l1=l1.next;
-            }
-            if(l2!=null){
-                sum+=l2.val;
-                l2=l2.next;
-            }
+        int carry=0;
+        ListNode curr=res,temp1=l1,temp2=l2;
+        while(temp1!=null || temp2!=null){
+            int sum=carry;
+            if(temp1!=null) sum+=temp1.val;
+            if(temp2!=null) sum+=temp2.val;
+            ListNode newNode = new ListNode(sum%10);
             carry=sum/10;
-            temp.next=new ListNode(sum%10);
-            temp=temp.next;
-            sum=0;
+            curr.next=newNode;
+            curr=curr.next;
+            if(temp1!=null) temp1=temp1.next;
+            if(temp2!=null) temp2=temp2.next;
+        }
+        if(carry!=0){
+            ListNode newNode = new ListNode(carry);
+            curr.next=newNode;
         }
         return res.next;
     }
